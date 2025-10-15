@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        while (true) {
             System.out.println("첫번째 정수를 입력하세요.");
             int num1 = scanner.nextInt();
 
@@ -25,15 +26,21 @@ public class Main {
                     result = num1 / num2;
                 } else {
                     System.out.println("0으로 나눌 수 없습니다.");
-                    return;
+                    continue;
                 }
             } else {
                 System.out.println("잘못된 연산자입니다.");
-                return;
+                continue;
             }
             System.out.println("결과: " + result);
 
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String answer = scanner.next();
+            if(answer.equals("exit")) {
+                break;
+            }
+
         }
     }
-
+}
 
