@@ -14,6 +14,11 @@ public class Main {
             System.out.println("두번째 정수를 입력하세요.");
             int num2 = scanner.nextInt();
 
+            if (num1 < 0 || num2 < 0){
+                System.out.println("잘못된 연산자입니다.");
+                continue;
+            }
+
             int result = 0;
             if (cs == '+') {
                 result = num1 + num2;
