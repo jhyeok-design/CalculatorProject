@@ -1,8 +1,11 @@
+package calculatorpj;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         while (true) {
             System.out.println("첫번째 정수를 입력하세요.");
@@ -19,25 +22,8 @@ public class Main {
                 continue;
             }
 
-            int result = 0;
-            if (cs == '+') {
-                result = num1 + num2;
-            } else if (cs == '-') {
-                result = num1 - num2;
-            } else if (cs == '*') {
-                result = num1 * num2;
-            } else if (cs == '/') {
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("0으로 나눌 수 없습니다.");
-                    continue;
-                }
-            } else {
-                System.out.println("잘못된 연산자입니다.");
-                continue;
-            }
-            System.out.println("결과: " + result);
+            int result = calculator.calculate(num1, num2, cs);
+            System.out.println("결과 값: " + result);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String answer = scanner.next();
