@@ -11,14 +11,13 @@ public class Calculator {
 
 
     // 생성자
-     Calculator() {
+    Calculator() {
 
     }
 
 
-
     // 기능
-    public  int calculate(int num1, int num2, char cs) {
+    public int calculate(int num1, int num2, char cs) {
 
         int result = 0;
         if (cs == '+') {
@@ -40,18 +39,19 @@ public class Calculator {
         }
         resultList.add(result);
         return result;
+
     }
-        // getter
-        public List<Integer> getResultList () {
-            return resultList;
-}
 
 
 
-
-
-
-
+    // getter
+    public List<Integer> getResultList() {
+        return resultList;
+    }
+    // setter
+    public void setResultList(List<Integer> resultList) {
+        this.resultList = resultList;
+    }
 
 
 }
