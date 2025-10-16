@@ -31,6 +31,11 @@ public class Main {
                 break;
             }
 
+            // getter
+            System.out.println(calculator.getResultList());
+
+
+
         }
     }
 }

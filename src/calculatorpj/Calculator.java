@@ -7,11 +7,11 @@ import java.util.List;
 public class Calculator {
 
     // 속성
-    List<Integer> resultList = new ArrayList<>();
+    private List<Integer> resultList = new ArrayList<>();
 
 
     // 생성자
-    Calculator() {
+     Calculator() {
 
     }
 
@@ -41,6 +41,14 @@ public class Calculator {
         resultList.add(result);
         return result;
     }
+        // getter
+        public List<Integer> getResultList () {
+            return resultList;
+}
+
+
+
+
 
 
 
