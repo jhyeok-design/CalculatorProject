@@ -23,6 +23,11 @@ public class Calculator {
             return null;
         }
 
+        if (!OperatorType.isValidOperator(operator)) {
+            System.out.println("잘못된 연산자입니다.");
+            return null;
+        }
+
         int result;
         switch (operator) {
             case '+':
