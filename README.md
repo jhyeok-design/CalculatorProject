@@ -18,9 +18,9 @@
 ---
 
 ##  클래스 구성
- **ArithmeticCalculator**  계산 수행, 결과 리스트 관리, 기준값 비교 기능 제공 
- **OperatorType (enum)**  유효한 연산자 정의 및 검증 
- **Main**  사용자 입력 처리 및 프로그램 실행 흐름 제어 
+- **ArithmeticCalculator**  계산 수행, 결과 리스트 관리, 기준값 비교 기능 제공
+- **OperatorType (enum)**  유효한 연산자 정의 및 검증
+- **Main**  사용자 입력 처리 및 프로그램 실행 흐름 제어 
 
 ---
 
