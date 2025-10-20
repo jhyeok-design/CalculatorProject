@@ -2,6 +2,7 @@ package calculatorpj;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 public class ArithmeticCalculator<T extends Number> {
@@ -72,11 +73,31 @@ public class ArithmeticCalculator<T extends Number> {
     }
 
     public void removeResult() {
-        if (resultList.size() > 1) {
+        if (resultList.size() > 2) {
             this.resultList.remove(0);
         }
+
+    }
+
+    public void resultBiggerThan(double value) {
+        List<Double> filterResults = resultList.stream()
+                .map(Number::doubleValue)
+                .filter(result -> result > value)
+                .collect(Collectors.toList());
+
+        if (filterResults.isEmpty()) {
+            System.out.println("입력한 값보다 큰 결과값이 없습니다.");
+        } else {
+            System.out.println("입력한 값보다 큰 결과값들:");
+            filterResults.forEach(r -> System.out.println(" - " + r));
+        }
+
     }
 
 
 }
+
+
+
+
 
