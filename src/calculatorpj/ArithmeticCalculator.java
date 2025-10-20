@@ -4,22 +4,26 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class Calculator {
+public class ArithmeticCalculator<T extends Number> {
 
     // 속성
-    private List<Integer> resultList = new ArrayList<>();
+    private List<T> resultList = new ArrayList<>();
 
 
     // 생성자
-    Calculator() {
+    ArithmeticCalculator() {
 
 
     }
 
     // 기능
-    public Integer calculate(int num1, int num2, char operator) {
-        if (num1 < 0 || num2 < 0) {
-            System.out.println("양의 정수를 입력하세요.");
+    public Double calculate(T num1, T num2, char operator) {
+
+        Double n1 = num1.doubleValue();
+        Double n2 = num2.doubleValue();
+
+        if (n1 < 0 || n2 < 0) {
+            System.out.println("양수를 입력하세요.");
             return null;
         }
 
@@ -28,42 +32,42 @@ public class Calculator {
             return null;
         }
 
-        int result;
+        double result;
         switch (operator) {
             case '+':
-                result = num1 + num2;
+                result = n1 + n2;
                 break;
             case '-':
-                result = num1 - num2;
+                result = n1 - n2;
                 break;
             case '*':
-                result = num1 * num2;
+                result = n1 * n2;
                 break;
             case '/':
-                if (num2 == 0) {
+                if (n2 == 0) {
                     System.out.println("0으로 나눌 수 없습니다.");
                     return null;
                 }
-                result = num1 / num2;
+                result = n1 / n2;
                 break;
             default:
                 System.out.println("잘못된 연산자입니다.");
                 return null;
         }
 
-        resultList.add(result);
+        resultList.add((T) Double.valueOf(result));
         return result;
     }
 
 
     // getter
-    public List<Integer> getResultList() {
+    public List<T> getResultList() {
         return resultList;
     }
 
 
     // setter
-    public void setResultList(List<Integer> resultList) {
+    public void setResultList(List<T> resultList) {
         this.resultList = resultList;
     }
 
